@@ -1,0 +1,1367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@ora3.elka.pw.edu.pl">
+  <database-model serializer="dbm" rdbms="ORACLE" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="PZELAZKO">
+      <ObjectId>2167</ObjectId>
+      <IntrospectionTimestamp>2017-05-22.14:25:27</IntrospectionTimestamp>
+      <CreatedTimestamp>2017-03-03.16:24:10</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.13:26:58</ModifiedTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="PUBLIC">
+      <ObjectId>1</ObjectId>
+    </schema>
+    <schema id="4" parent="1" name="SYS">
+      <ObjectId>0</ObjectId>
+    </schema>
+    <schema id="5" parent="1" name="SYSTEM">
+      <ObjectId>5</ObjectId>
+    </schema>
+    <schema id="6" parent="1" name="OUTLN">
+      <ObjectId>9</ObjectId>
+    </schema>
+    <schema id="7" parent="1" name="DIP">
+      <ObjectId>14</ObjectId>
+    </schema>
+    <schema id="8" parent="1" name="ORACLE_OCM">
+      <ObjectId>21</ObjectId>
+    </schema>
+    <schema id="9" parent="1" name="DBSNMP">
+      <ObjectId>30</ObjectId>
+    </schema>
+    <schema id="10" parent="1" name="APPQOSSYS">
+      <ObjectId>31</ObjectId>
+    </schema>
+    <schema id="11" parent="1" name="WMSYS">
+      <ObjectId>32</ObjectId>
+    </schema>
+    <schema id="12" parent="1" name="EXFSYS">
+      <ObjectId>42</ObjectId>
+    </schema>
+    <schema id="13" parent="1" name="CTXSYS">
+      <ObjectId>43</ObjectId>
+    </schema>
+    <schema id="14" parent="1" name="XDB">
+      <ObjectId>45</ObjectId>
+    </schema>
+    <schema id="15" parent="1" name="ANONYMOUS">
+      <ObjectId>46</ObjectId>
+    </schema>
+    <schema id="16" parent="1" name="ORDSYS">
+      <ObjectId>53</ObjectId>
+    </schema>
+    <schema id="17" parent="1" name="ORDDATA">
+      <ObjectId>54</ObjectId>
+    </schema>
+    <schema id="18" parent="1" name="ORDPLUGINS">
+      <ObjectId>55</ObjectId>
+    </schema>
+    <schema id="19" parent="1" name="SI_INFORMTN_SCHEMA">
+      <ObjectId>56</ObjectId>
+    </schema>
+    <schema id="20" parent="1" name="MDSYS">
+      <ObjectId>57</ObjectId>
+    </schema>
+    <schema id="21" parent="1" name="OLAPSYS">
+      <ObjectId>61</ObjectId>
+    </schema>
+    <schema id="22" parent="1" name="MDDATA">
+      <ObjectId>65</ObjectId>
+    </schema>
+    <schema id="23" parent="1" name="SPATIAL_WFS_ADMIN_USR">
+      <ObjectId>67</ObjectId>
+    </schema>
+    <schema id="24" parent="1" name="SPATIAL_CSW_ADMIN_USR">
+      <ObjectId>70</ObjectId>
+    </schema>
+    <schema id="25" parent="1" name="SYSMAN">
+      <ObjectId>72</ObjectId>
+    </schema>
+    <schema id="26" parent="1" name="MGMT_VIEW">
+      <ObjectId>74</ObjectId>
+    </schema>
+    <schema id="27" parent="1" name="FLOWS_FILES">
+      <ObjectId>75</ObjectId>
+    </schema>
+    <schema id="28" parent="1" name="APEX_PUBLIC_USER">
+      <ObjectId>76</ObjectId>
+    </schema>
+    <schema id="29" parent="1" name="APEX_030200">
+      <ObjectId>78</ObjectId>
+    </schema>
+    <schema id="30" parent="1" name="OWBSYS">
+      <ObjectId>79</ObjectId>
+    </schema>
+    <schema id="31" parent="1" name="OWBSYS_AUDIT">
+      <ObjectId>83</ObjectId>
+    </schema>
+    <schema id="32" parent="1" name="SCOTT">
+      <ObjectId>84</ObjectId>
+    </schema>
+    <schema id="33" parent="1" name="HR">
+      <ObjectId>85</ObjectId>
+    </schema>
+    <schema id="34" parent="1" name="OE">
+      <ObjectId>86</ObjectId>
+    </schema>
+    <schema id="35" parent="1" name="IX">
+      <ObjectId>87</ObjectId>
+    </schema>
+    <schema id="36" parent="1" name="SH">
+      <ObjectId>88</ObjectId>
+    </schema>
+    <schema id="37" parent="1" name="PM">
+      <ObjectId>89</ObjectId>
+    </schema>
+    <schema id="38" parent="1" name="BI">
+      <ObjectId>90</ObjectId>
+    </schema>
+    <schema id="39" parent="1" name="RBA">
+      <ObjectId>94</ObjectId>
+    </schema>
+    <schema id="40" parent="1" name="MJM">
+      <ObjectId>95</ObjectId>
+    </schema>
+    <schema id="41" parent="1" name="PSM">
+      <ObjectId>96</ObjectId>
+    </schema>
+    <schema id="42" parent="1" name="PJS">
+      <ObjectId>97</ObjectId>
+    </schema>
+    <schema id="43" parent="1" name="PPA">
+      <ObjectId>98</ObjectId>
+    </schema>
+    <schema id="44" parent="1" name="JLEWANDO">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="45" parent="1" name="ACIEMSKI">
+      <ObjectId>100</ObjectId>
+    </schema>
+    <schema id="46" parent="1" name="RBEMBENI">
+      <ObjectId>101</ObjectId>
+    </schema>
+    <schema id="47" parent="1" name="MKOZLOW3">
+      <ObjectId>102</ObjectId>
+    </schema>
+    <schema id="48" parent="1" name="PSZCZEP5">
+      <ObjectId>103</ObjectId>
+    </schema>
+    <schema id="49" parent="1" name="MKOWALC3">
+      <ObjectId>104</ObjectId>
+    </schema>
+    <schema id="50" parent="1" name="DRYZKO">
+      <ObjectId>105</ObjectId>
+    </schema>
+    <schema id="51" parent="1" name="BTWARDOW">
+      <ObjectId>301</ObjectId>
+    </schema>
+    <schema id="52" parent="1" name="PANDRUSZ">
+      <ObjectId>302</ObjectId>
+    </schema>
+    <schema id="53" parent="1" name="PWASIEWI">
+      <ObjectId>303</ObjectId>
+    </schema>
+    <schema id="54" parent="1" name="JMY">
+      <ObjectId>304</ObjectId>
+    </schema>
+    <schema id="55" parent="1" name="MSZCZERB">
+      <ObjectId>507</ObjectId>
+    </schema>
+    <schema id="56" parent="1" name="AKHMELOW">
+      <ObjectId>508</ObjectId>
+    </schema>
+    <schema id="57" parent="1" name="RKRAJEWS">
+      <ObjectId>728</ObjectId>
+    </schema>
+    <schema id="58" parent="1" name="JSOSNOW1">
+      <ObjectId>729</ObjectId>
+    </schema>
+    <schema id="59" parent="1" name="AMUSIAL">
+      <ObjectId>1194</ObjectId>
+    </schema>
+    <schema id="60" parent="1" name="PMACIAG">
+      <ObjectId>1437</ObjectId>
+    </schema>
+    <schema id="61" parent="1" name="KGROCHOW">
+      <ObjectId>1438</ObjectId>
+    </schema>
+    <schema id="62" parent="1" name="GPROTAZI">
+      <ObjectId>1440</ObjectId>
+    </schema>
+    <schema id="63" parent="1" name="RKRAWCZY">
+      <ObjectId>1441</ObjectId>
+    </schema>
+    <schema id="64" parent="1" name="XWKAMINS">
+      <ObjectId>1442</ObjectId>
+    </schema>
+    <schema id="65" parent="1" name="JMYRCHA">
+      <ObjectId>1443</ObjectId>
+    </schema>
+    <schema id="66" parent="1" name="LSLIWA1">
+      <ObjectId>1444</ObjectId>
+    </schema>
+    <schema id="67" parent="1" name="XDRZEZNI">
+      <ObjectId>1930</ObjectId>
+    </schema>
+    <schema id="68" parent="1" name="XJACDELE">
+      <ObjectId>1931</ObjectId>
+    </schema>
+    <schema id="69" parent="1" name="XJAKDELE">
+      <ObjectId>1932</ObjectId>
+    </schema>
+    <schema id="70" parent="1" name="XJKULAK">
+      <ObjectId>1933</ObjectId>
+    </schema>
+    <schema id="71" parent="1" name="XKCHADAJ">
+      <ObjectId>1934</ObjectId>
+    </schema>
+    <schema id="72" parent="1" name="XLURBANO">
+      <ObjectId>1935</ObjectId>
+    </schema>
+    <schema id="73" parent="1" name="XMBODZIO">
+      <ObjectId>1936</ObjectId>
+    </schema>
+    <schema id="74" parent="1" name="XMJASINA">
+      <ObjectId>1937</ObjectId>
+    </schema>
+    <schema id="75" parent="1" name="XMLEPECK">
+      <ObjectId>1938</ObjectId>
+    </schema>
+    <schema id="76" parent="1" name="XMMISIUR">
+      <ObjectId>1939</ObjectId>
+    </schema>
+    <schema id="77" parent="1" name="XPANTONC">
+      <ObjectId>1940</ObjectId>
+    </schema>
+    <schema id="78" parent="1" name="XPPLUTAD">
+      <ObjectId>1941</ObjectId>
+    </schema>
+    <schema id="79" parent="1" name="XPRYGIEW">
+      <ObjectId>1942</ObjectId>
+    </schema>
+    <schema id="80" parent="1" name="XMBES">
+      <ObjectId>1949</ObjectId>
+    </schema>
+    <schema id="81" parent="1" name="XKCZARNE">
+      <ObjectId>1950</ObjectId>
+    </schema>
+    <schema id="82" parent="1" name="XMDZIEND">
+      <ObjectId>1951</ObjectId>
+    </schema>
+    <schema id="83" parent="1" name="XLFURMAN">
+      <ObjectId>1952</ObjectId>
+    </schema>
+    <schema id="84" parent="1" name="XMGAWLOW">
+      <ObjectId>1953</ObjectId>
+    </schema>
+    <schema id="85" parent="1" name="XDJONIEC">
+      <ObjectId>1954</ObjectId>
+    </schema>
+    <schema id="86" parent="1" name="XMKAMINS">
+      <ObjectId>1955</ObjectId>
+    </schema>
+    <schema id="87" parent="1" name="XBKILIAN">
+      <ObjectId>1957</ObjectId>
+    </schema>
+    <schema id="88" parent="1" name="XPKONIEC">
+      <ObjectId>1958</ObjectId>
+    </schema>
+    <schema id="89" parent="1" name="XMKOZELS">
+      <ObjectId>1960</ObjectId>
+    </schema>
+    <schema id="90" parent="1" name="XMKRASUS">
+      <ObjectId>1961</ObjectId>
+    </schema>
+    <schema id="91" parent="1" name="XLKRUK">
+      <ObjectId>1962</ObjectId>
+    </schema>
+    <schema id="92" parent="1" name="XKKRUPA">
+      <ObjectId>1963</ObjectId>
+    </schema>
+    <schema id="93" parent="1" name="XWKRZYWI">
+      <ObjectId>1964</ObjectId>
+    </schema>
+    <schema id="94" parent="1" name="XPLEWAND">
+      <ObjectId>1965</ObjectId>
+    </schema>
+    <schema id="95" parent="1" name="XMMACZKA">
+      <ObjectId>1966</ObjectId>
+    </schema>
+    <schema id="96" parent="1" name="XSNOWICK">
+      <ObjectId>1967</ObjectId>
+    </schema>
+    <schema id="97" parent="1" name="XMNOWINS">
+      <ObjectId>1968</ObjectId>
+    </schema>
+    <schema id="98" parent="1" name="XBPEREKI">
+      <ObjectId>1969</ObjectId>
+    </schema>
+    <schema id="99" parent="1" name="XFPIOTRO">
+      <ObjectId>1970</ObjectId>
+    </schema>
+    <schema id="100" parent="1" name="XMPOGODZ">
+      <ObjectId>1971</ObjectId>
+    </schema>
+    <schema id="101" parent="1" name="XKPRUSAC">
+      <ObjectId>1972</ObjectId>
+    </schema>
+    <schema id="102" parent="1" name="XMPRUSAC">
+      <ObjectId>1973</ObjectId>
+    </schema>
+    <schema id="103" parent="1" name="XMPRZEZD">
+      <ObjectId>1974</ObjectId>
+    </schema>
+    <schema id="104" parent="1" name="XCPRZYBO">
+      <ObjectId>1975</ObjectId>
+    </schema>
+    <schema id="105" parent="1" name="XUROMANI">
+      <ObjectId>1976</ObjectId>
+    </schema>
+    <schema id="106" parent="1" name="XGRYBINS">
+      <ObjectId>1977</ObjectId>
+    </schema>
+    <schema id="107" parent="1" name="XHSOBOL">
+      <ObjectId>1978</ObjectId>
+    </schema>
+    <schema id="108" parent="1" name="XPSWIATK">
+      <ObjectId>1979</ObjectId>
+    </schema>
+    <schema id="109" parent="1" name="XASWIDER">
+      <ObjectId>1980</ObjectId>
+    </schema>
+    <schema id="110" parent="1" name="XMTRYBUL">
+      <ObjectId>1981</ObjectId>
+    </schema>
+    <schema id="111" parent="1" name="XKTRYBUS">
+      <ObjectId>1982</ObjectId>
+    </schema>
+    <schema id="112" parent="1" name="XJTULINS">
+      <ObjectId>1983</ObjectId>
+    </schema>
+    <schema id="113" parent="1" name="XPWESOLO">
+      <ObjectId>1984</ObjectId>
+    </schema>
+    <schema id="114" parent="1" name="XSWIETOW">
+      <ObjectId>1986</ObjectId>
+    </schema>
+    <schema id="115" parent="1" name="XWWLODEK">
+      <ObjectId>1987</ObjectId>
+    </schema>
+    <schema id="116" parent="1" name="XTWROBLE">
+      <ObjectId>1988</ObjectId>
+    </schema>
+    <schema id="117" parent="1" name="XMZABADA">
+      <ObjectId>1989</ObjectId>
+    </schema>
+    <schema id="118" parent="1" name="XKZAMLYN">
+      <ObjectId>1990</ObjectId>
+    </schema>
+    <schema id="119" parent="1" name="XJZAREMB">
+      <ObjectId>1991</ObjectId>
+    </schema>
+    <schema id="120" parent="1" name="XMZGLENI">
+      <ObjectId>1992</ObjectId>
+    </schema>
+    <schema id="121" parent="1" name="AALSUBA">
+      <ObjectId>2000</ObjectId>
+    </schema>
+    <schema id="122" parent="1" name="AGROCHOC">
+      <ObjectId>2001</ObjectId>
+    </schema>
+    <schema id="123" parent="1" name="AHAWRYLA">
+      <ObjectId>2002</ObjectId>
+    </schema>
+    <schema id="124" parent="1" name="AKLOSS">
+      <ObjectId>2003</ObjectId>
+    </schema>
+    <schema id="125" parent="1" name="AKOCHANO">
+      <ObjectId>2004</ObjectId>
+    </schema>
+    <schema id="126" parent="1" name="AKORCZAK">
+      <ObjectId>2005</ObjectId>
+    </schema>
+    <schema id="127" parent="1" name="AKOTOWSK">
+      <ObjectId>2006</ObjectId>
+    </schema>
+    <schema id="128" parent="1" name="ASHUMAK">
+      <ObjectId>2007</ObjectId>
+    </schema>
+    <schema id="129" parent="1" name="ASIERPIN">
+      <ObjectId>2008</ObjectId>
+    </schema>
+    <schema id="130" parent="1" name="ASVYSTUN">
+      <ObjectId>2009</ObjectId>
+    </schema>
+    <schema id="131" parent="1" name="ASZCZEP2">
+      <ObjectId>2010</ObjectId>
+    </schema>
+    <schema id="132" parent="1" name="ATKACZY1">
+      <ObjectId>2011</ObjectId>
+    </schema>
+    <schema id="133" parent="1" name="AWOJCIK6">
+      <ObjectId>2012</ObjectId>
+    </schema>
+    <schema id="134" parent="1" name="BBOCZEK">
+      <ObjectId>2013</ObjectId>
+    </schema>
+    <schema id="135" parent="1" name="BGAJDA">
+      <ObjectId>2014</ObjectId>
+    </schema>
+    <schema id="136" parent="1" name="BKOLODZI">
+      <ObjectId>2015</ObjectId>
+    </schema>
+    <schema id="137" parent="1" name="BMIELCZA">
+      <ObjectId>2016</ObjectId>
+    </schema>
+    <schema id="138" parent="1" name="BPAWELKO">
+      <ObjectId>2017</ObjectId>
+    </schema>
+    <schema id="139" parent="1" name="BWOJCIEC">
+      <ObjectId>2018</ObjectId>
+    </schema>
+    <schema id="140" parent="1" name="CKATHERA">
+      <ObjectId>2019</ObjectId>
+    </schema>
+    <schema id="141" parent="1" name="DBIGOS">
+      <ObjectId>2020</ObjectId>
+    </schema>
+    <schema id="142" parent="1" name="DFLORCZY">
+      <ObjectId>2021</ObjectId>
+    </schema>
+    <schema id="143" parent="1" name="DKLEPAC1">
+      <ObjectId>2022</ObjectId>
+    </schema>
+    <schema id="144" parent="1" name="DMALISZE">
+      <ObjectId>2023</ObjectId>
+    </schema>
+    <schema id="145" parent="1" name="DORLINSK">
+      <ObjectId>2024</ObjectId>
+    </schema>
+    <schema id="146" parent="1" name="DPORTASI">
+      <ObjectId>2025</ObjectId>
+    </schema>
+    <schema id="147" parent="1" name="DROGOWSK">
+      <ObjectId>2026</ObjectId>
+    </schema>
+    <schema id="148" parent="1" name="DTRUSINS">
+      <ObjectId>2027</ObjectId>
+    </schema>
+    <schema id="149" parent="1" name="DURBANO1">
+      <ObjectId>2028</ObjectId>
+    </schema>
+    <schema id="150" parent="1" name="DWASILEW">
+      <ObjectId>2029</ObjectId>
+    </schema>
+    <schema id="151" parent="1" name="DZAWROTN">
+      <ObjectId>2030</ObjectId>
+    </schema>
+    <schema id="152" parent="1" name="ECIL">
+      <ObjectId>2031</ObjectId>
+    </schema>
+    <schema id="153" parent="1" name="EKOWALSK">
+      <ObjectId>2032</ObjectId>
+    </schema>
+    <schema id="154" parent="1" name="EMULARCZ">
+      <ObjectId>2033</ObjectId>
+    </schema>
+    <schema id="155" parent="1" name="ERATYNSK">
+      <ObjectId>2034</ObjectId>
+    </schema>
+    <schema id="156" parent="1" name="ETROCHIM">
+      <ObjectId>2035</ObjectId>
+    </schema>
+    <schema id="157" parent="1" name="FBOREK">
+      <ObjectId>2036</ObjectId>
+    </schema>
+    <schema id="158" parent="1" name="FKONIECZ">
+      <ObjectId>2037</ObjectId>
+    </schema>
+    <schema id="159" parent="1" name="GKUDUK">
+      <ObjectId>2038</ObjectId>
+    </schema>
+    <schema id="160" parent="1" name="GNOWACKI">
+      <ObjectId>2039</ObjectId>
+    </schema>
+    <schema id="161" parent="1" name="GTOMASZC">
+      <ObjectId>2040</ObjectId>
+    </schema>
+    <schema id="162" parent="1" name="HKRAWCZA">
+      <ObjectId>2041</ObjectId>
+    </schema>
+    <schema id="163" parent="1" name="IDROZDOW">
+      <ObjectId>2042</ObjectId>
+    </schema>
+    <schema id="164" parent="1" name="IDUSZA">
+      <ObjectId>2043</ObjectId>
+    </schema>
+    <schema id="165" parent="1" name="IOSETEK">
+      <ObjectId>2044</ObjectId>
+    </schema>
+    <schema id="166" parent="1" name="ISLOTWIN">
+      <ObjectId>2045</ObjectId>
+    </schema>
+    <schema id="167" parent="1" name="IWROBEL">
+      <ObjectId>2046</ObjectId>
+    </schema>
+    <schema id="168" parent="1" name="JAJCHEL">
+      <ObjectId>2047</ObjectId>
+    </schema>
+    <schema id="169" parent="1" name="JANTONI1">
+      <ObjectId>2048</ObjectId>
+    </schema>
+    <schema id="170" parent="1" name="JBUKAT">
+      <ObjectId>2049</ObjectId>
+    </schema>
+    <schema id="171" parent="1" name="JBURACZY">
+      <ObjectId>2050</ObjectId>
+    </schema>
+    <schema id="172" parent="1" name="JBUTAJLO">
+      <ObjectId>2051</ObjectId>
+    </schema>
+    <schema id="173" parent="1" name="JGAJOWNI">
+      <ObjectId>2052</ObjectId>
+    </schema>
+    <schema id="174" parent="1" name="JGORKA">
+      <ObjectId>2053</ObjectId>
+    </schema>
+    <schema id="175" parent="1" name="JJAKOBCZ">
+      <ObjectId>2054</ObjectId>
+    </schema>
+    <schema id="176" parent="1" name="JKOCHANO">
+      <ObjectId>2055</ObjectId>
+    </schema>
+    <schema id="177" parent="1" name="JMAZUR">
+      <ObjectId>2056</ObjectId>
+    </schema>
+    <schema id="178" parent="1" name="JNIEDZWI">
+      <ObjectId>2057</ObjectId>
+    </schema>
+    <schema id="179" parent="1" name="JOSTROWS">
+      <ObjectId>2058</ObjectId>
+    </schema>
+    <schema id="180" parent="1" name="JPANKIEW">
+      <ObjectId>2059</ObjectId>
+    </schema>
+    <schema id="181" parent="1" name="JPLEBAN">
+      <ObjectId>2060</ObjectId>
+    </schema>
+    <schema id="182" parent="1" name="JPROKOPO">
+      <ObjectId>2061</ObjectId>
+    </schema>
+    <schema id="183" parent="1" name="JRAK1">
+      <ObjectId>2062</ObjectId>
+    </schema>
+    <schema id="184" parent="1" name="JSZAJNER">
+      <ObjectId>2063</ObjectId>
+    </schema>
+    <schema id="185" parent="1" name="JSZCZEP2">
+      <ObjectId>2064</ObjectId>
+    </schema>
+    <schema id="186" parent="1" name="KBABU">
+      <ObjectId>2065</ObjectId>
+    </schema>
+    <schema id="187" parent="1" name="KBIDUS">
+      <ObjectId>2066</ObjectId>
+    </schema>
+    <schema id="188" parent="1" name="KBLOCH">
+      <ObjectId>2067</ObjectId>
+    </schema>
+    <schema id="189" parent="1" name="KCABAJ1">
+      <ObjectId>2068</ObjectId>
+    </schema>
+    <schema id="190" parent="1" name="KCHECINS">
+      <ObjectId>2069</ObjectId>
+    </schema>
+    <schema id="191" parent="1" name="KCICHONC">
+      <ObjectId>2070</ObjectId>
+    </schema>
+    <schema id="192" parent="1" name="KDABROW7">
+      <ObjectId>2071</ObjectId>
+    </schema>
+    <schema id="193" parent="1" name="KDESZCZ">
+      <ObjectId>2072</ObjectId>
+    </schema>
+    <schema id="194" parent="1" name="KDZIERZA">
+      <ObjectId>2073</ObjectId>
+    </schema>
+    <schema id="195" parent="1" name="KDZIURLI">
+      <ObjectId>2074</ObjectId>
+    </schema>
+    <schema id="196" parent="1" name="KFRAC">
+      <ObjectId>2075</ObjectId>
+    </schema>
+    <schema id="197" parent="1" name="KHAJDUK">
+      <ObjectId>2076</ObjectId>
+    </schema>
+    <schema id="198" parent="1" name="KJANISZE">
+      <ObjectId>2077</ObjectId>
+    </schema>
+    <schema id="199" parent="1" name="KJANKOW2">
+      <ObjectId>2078</ObjectId>
+    </schema>
+    <schema id="200" parent="1" name="KJASZCZU">
+      <ObjectId>2079</ObjectId>
+    </schema>
+    <schema id="201" parent="1" name="KKAMINS1">
+      <ObjectId>2080</ObjectId>
+    </schema>
+    <schema id="202" parent="1" name="KKARABOW">
+      <ObjectId>2081</ObjectId>
+    </schema>
+    <schema id="203" parent="1" name="KKUCHAR3">
+      <ObjectId>2082</ObjectId>
+    </schema>
+    <schema id="204" parent="1" name="KMANDAS">
+      <ObjectId>2083</ObjectId>
+    </schema>
+    <schema id="205" parent="1" name="KORLOWSK">
+      <ObjectId>2084</ObjectId>
+    </schema>
+    <schema id="206" parent="1" name="KPELC">
+      <ObjectId>2085</ObjectId>
+    </schema>
+    <schema id="207" parent="1" name="KRYBACKA">
+      <ObjectId>2086</ObjectId>
+    </schema>
+    <schema id="208" parent="1" name="KSAPINSK">
+      <ObjectId>2087</ObjectId>
+    </schema>
+    <schema id="209" parent="1" name="KSKORULS">
+      <ObjectId>2088</ObjectId>
+    </schema>
+    <schema id="210" parent="1" name="KSTALEGA">
+      <ObjectId>2089</ObjectId>
+    </schema>
+    <schema id="211" parent="1" name="KSZCZEP3">
+      <ObjectId>2090</ObjectId>
+    </schema>
+    <schema id="212" parent="1" name="KSZMULEW">
+      <ObjectId>2091</ObjectId>
+    </schema>
+    <schema id="213" parent="1" name="LLEPAK">
+      <ObjectId>2092</ObjectId>
+    </schema>
+    <schema id="214" parent="1" name="LWOJCIE1">
+      <ObjectId>2093</ObjectId>
+    </schema>
+    <schema id="215" parent="1" name="MANDRUSZ">
+      <ObjectId>2094</ObjectId>
+    </schema>
+    <schema id="216" parent="1" name="MBOGUCKI">
+      <ObjectId>2095</ObjectId>
+    </schema>
+    <schema id="217" parent="1" name="MBRINKIE">
+      <ObjectId>2096</ObjectId>
+    </schema>
+    <schema id="218" parent="1" name="MCICHECK">
+      <ObjectId>2097</ObjectId>
+    </schema>
+    <schema id="219" parent="1" name="MDOROBEK">
+      <ObjectId>2098</ObjectId>
+    </schema>
+    <schema id="220" parent="1" name="MDZIEDZI">
+      <ObjectId>2099</ObjectId>
+    </schema>
+    <schema id="221" parent="1" name="MDZWIGAL">
+      <ObjectId>2100</ObjectId>
+    </schema>
+    <schema id="222" parent="1" name="MERLA">
+      <ObjectId>2101</ObjectId>
+    </schema>
+    <schema id="223" parent="1" name="MGOWORKO">
+      <ObjectId>2102</ObjectId>
+    </schema>
+    <schema id="224" parent="1" name="MGRZESIA">
+      <ObjectId>2103</ObjectId>
+    </schema>
+    <schema id="225" parent="1" name="MGRZESZC">
+      <ObjectId>2104</ObjectId>
+    </schema>
+    <schema id="226" parent="1" name="MHALASA">
+      <ObjectId>2105</ObjectId>
+    </schema>
+    <schema id="227" parent="1" name="MJABLON3">
+      <ObjectId>2106</ObjectId>
+    </schema>
+    <schema id="228" parent="1" name="MJANIAK">
+      <ObjectId>2107</ObjectId>
+    </schema>
+    <schema id="229" parent="1" name="MJEZIERS">
+      <ObjectId>2108</ObjectId>
+    </schema>
+    <schema id="230" parent="1" name="MKANIA">
+      <ObjectId>2109</ObjectId>
+    </schema>
+    <schema id="231" parent="1" name="MKEDZIE4">
+      <ObjectId>2110</ObjectId>
+    </schema>
+    <schema id="232" parent="1" name="MKEDZIEL">
+      <ObjectId>2111</ObjectId>
+    </schema>
+    <schema id="233" parent="1" name="MKONDRAS">
+      <ObjectId>2112</ObjectId>
+    </schema>
+    <schema id="234" parent="1" name="MKRYSA">
+      <ObjectId>2113</ObjectId>
+    </schema>
+    <schema id="235" parent="1" name="MKUSY1">
+      <ObjectId>2114</ObjectId>
+    </schema>
+    <schema id="236" parent="1" name="MKUTROWS">
+      <ObjectId>2115</ObjectId>
+    </schema>
+    <schema id="237" parent="1" name="MMAJKOWS">
+      <ObjectId>2116</ObjectId>
+    </schema>
+    <schema id="238" parent="1" name="MMARZEC">
+      <ObjectId>2117</ObjectId>
+    </schema>
+    <schema id="239" parent="1" name="MNOSEK">
+      <ObjectId>2118</ObjectId>
+    </schema>
+    <schema id="240" parent="1" name="MNOWICK2">
+      <ObjectId>2119</ObjectId>
+    </schema>
+    <schema id="241" parent="1" name="MOSOWIEC">
+      <ObjectId>2120</ObjectId>
+    </schema>
+    <schema id="242" parent="1" name="MPERCIN1">
+      <ObjectId>2121</ObjectId>
+    </schema>
+    <schema id="243" parent="1" name="MPESKO">
+      <ObjectId>2122</ObjectId>
+    </schema>
+    <schema id="244" parent="1" name="MPLESINS">
+      <ObjectId>2123</ObjectId>
+    </schema>
+    <schema id="245" parent="1" name="MPRYSTUP">
+      <ObjectId>2124</ObjectId>
+    </schema>
+    <schema id="246" parent="1" name="MPUC">
+      <ObjectId>2125</ObjectId>
+    </schema>
+    <schema id="247" parent="1" name="MPURSKI">
+      <ObjectId>2126</ObjectId>
+    </schema>
+    <schema id="248" parent="1" name="MRUSIECK">
+      <ObjectId>2127</ObjectId>
+    </schema>
+    <schema id="249" parent="1" name="MSADOWS1">
+      <ObjectId>2128</ObjectId>
+    </schema>
+    <schema id="250" parent="1" name="MSIECZKO">
+      <ObjectId>2129</ObjectId>
+    </schema>
+    <schema id="251" parent="1" name="MSKRYSKI">
+      <ObjectId>2130</ObjectId>
+    </schema>
+    <schema id="252" parent="1" name="MSMOLA">
+      <ObjectId>2131</ObjectId>
+    </schema>
+    <schema id="253" parent="1" name="MSTAWIK">
+      <ObjectId>2132</ObjectId>
+    </schema>
+    <schema id="254" parent="1" name="MSUCHOCK">
+      <ObjectId>2133</ObjectId>
+    </schema>
+    <schema id="255" parent="1" name="MSWIANIE">
+      <ObjectId>2134</ObjectId>
+    </schema>
+    <schema id="256" parent="1" name="MSZULC2">
+      <ObjectId>2135</ObjectId>
+    </schema>
+    <schema id="257" parent="1" name="MTURSKI">
+      <ObjectId>2136</ObjectId>
+    </schema>
+    <schema id="258" parent="1" name="MUMANSKI">
+      <ObjectId>2137</ObjectId>
+    </schema>
+    <schema id="259" parent="1" name="MVATLURI">
+      <ObjectId>2138</ObjectId>
+    </schema>
+    <schema id="260" parent="1" name="MWACHOWI">
+      <ObjectId>2139</ObjectId>
+    </schema>
+    <schema id="261" parent="1" name="MWASIAK">
+      <ObjectId>2140</ObjectId>
+    </schema>
+    <schema id="262" parent="1" name="MWILCZY2">
+      <ObjectId>2141</ObjectId>
+    </schema>
+    <schema id="263" parent="1" name="NOSIADAL">
+      <ObjectId>2142</ObjectId>
+    </schema>
+    <schema id="264" parent="1" name="PANTOSIU">
+      <ObjectId>2143</ObjectId>
+    </schema>
+    <schema id="265" parent="1" name="PDENERT">
+      <ObjectId>2144</ObjectId>
+    </schema>
+    <schema id="266" parent="1" name="PGONTARZ">
+      <ObjectId>2145</ObjectId>
+    </schema>
+    <schema id="267" parent="1" name="PGRABARS">
+      <ObjectId>2146</ObjectId>
+    </schema>
+    <schema id="268" parent="1" name="PGRABINS">
+      <ObjectId>2147</ObjectId>
+    </schema>
+    <schema id="269" parent="1" name="PGREBOWI">
+      <ObjectId>2148</ObjectId>
+    </schema>
+    <schema id="270" parent="1" name="PKAMINS3">
+      <ObjectId>2149</ObjectId>
+    </schema>
+    <schema id="271" parent="1" name="PKAMINS5">
+      <ObjectId>2150</ObjectId>
+    </schema>
+    <schema id="272" parent="1" name="PKOMOROW">
+      <ObjectId>2151</ObjectId>
+    </schema>
+    <schema id="273" parent="1" name="PKORPAL">
+      <ObjectId>2152</ObjectId>
+    </schema>
+    <schema id="274" parent="1" name="PKUCHAR4">
+      <ObjectId>2153</ObjectId>
+    </schema>
+    <schema id="275" parent="1" name="PLUCZYNS">
+      <ObjectId>2154</ObjectId>
+    </schema>
+    <schema id="276" parent="1" name="PMARCIN2">
+      <ObjectId>2155</ObjectId>
+    </schema>
+    <schema id="277" parent="1" name="PMUNEDZI">
+      <ObjectId>2156</ObjectId>
+    </schema>
+    <schema id="278" parent="1" name="PPANKIE1">
+      <ObjectId>2157</ObjectId>
+    </schema>
+    <schema id="279" parent="1" name="PPIEKARC">
+      <ObjectId>2158</ObjectId>
+    </schema>
+    <schema id="280" parent="1" name="PPOLJANS">
+      <ObjectId>2159</ObjectId>
+    </schema>
+    <schema id="281" parent="1" name="PPONIEDZ">
+      <ObjectId>2160</ObjectId>
+    </schema>
+    <schema id="282" parent="1" name="PPOSKART">
+      <ObjectId>2161</ObjectId>
+    </schema>
+    <schema id="283" parent="1" name="PRAWAT">
+      <ObjectId>2162</ObjectId>
+    </schema>
+    <schema id="284" parent="1" name="PREJMAK">
+      <ObjectId>2163</ObjectId>
+    </schema>
+    <schema id="285" parent="1" name="PSZADKOW">
+      <ObjectId>2164</ObjectId>
+    </schema>
+    <schema id="286" parent="1" name="PSZWED">
+      <ObjectId>2165</ObjectId>
+    </schema>
+    <schema id="287" parent="1" name="PWIECKOW">
+      <ObjectId>2166</ObjectId>
+    </schema>
+    <schema id="288" parent="1" name="PZYCH1">
+      <ObjectId>2168</ObjectId>
+    </schema>
+    <schema id="289" parent="1" name="RGALCZAK">
+      <ObjectId>2169</ObjectId>
+    </schema>
+    <schema id="290" parent="1" name="RPIWOWAR">
+      <ObjectId>2170</ObjectId>
+    </schema>
+    <schema id="291" parent="1" name="RPOOJARY">
+      <ObjectId>2171</ObjectId>
+    </schema>
+    <schema id="292" parent="1" name="RSAWICKI">
+      <ObjectId>2172</ObjectId>
+    </schema>
+    <schema id="293" parent="1" name="RWOJCIK">
+      <ObjectId>2173</ObjectId>
+    </schema>
+    <schema id="294" parent="1" name="SKALUSKI">
+      <ObjectId>2174</ObjectId>
+    </schema>
+    <schema id="295" parent="1" name="SKARPOV">
+      <ObjectId>2175</ObjectId>
+    </schema>
+    <schema id="296" parent="1" name="SSANGEM">
+      <ObjectId>2176</ObjectId>
+    </schema>
+    <schema id="297" parent="1" name="SSOKOL1">
+      <ObjectId>2177</ObjectId>
+    </schema>
+    <schema id="298" parent="1" name="SSZYMBOR">
+      <ObjectId>2178</ObjectId>
+    </schema>
+    <schema id="299" parent="1" name="TBUCHHOL">
+      <ObjectId>2179</ObjectId>
+    </schema>
+    <schema id="300" parent="1" name="TGALECKI">
+      <ObjectId>2180</ObjectId>
+    </schema>
+    <schema id="301" parent="1" name="TGLOWKA">
+      <ObjectId>2181</ObjectId>
+    </schema>
+    <schema id="302" parent="1" name="TJASTRZ1">
+      <ObjectId>2182</ObjectId>
+    </schema>
+    <schema id="303" parent="1" name="TLEMPKOW">
+      <ObjectId>2183</ObjectId>
+    </schema>
+    <schema id="304" parent="1" name="TMURAWSK">
+      <ObjectId>2184</ObjectId>
+    </schema>
+    <schema id="305" parent="1" name="TNOWAK1">
+      <ObjectId>2185</ObjectId>
+    </schema>
+    <schema id="306" parent="1" name="TWIWALA">
+      <ObjectId>2186</ObjectId>
+    </schema>
+    <schema id="307" parent="1" name="VMARTSEN">
+      <ObjectId>2187</ObjectId>
+    </schema>
+    <schema id="308" parent="1" name="VSRINIVA">
+      <ObjectId>2188</ObjectId>
+    </schema>
+    <schema id="309" parent="1" name="WGRUSZKA">
+      <ObjectId>2189</ObjectId>
+    </schema>
+    <schema id="310" parent="1" name="WPRECIKO">
+      <ObjectId>2190</ObjectId>
+    </schema>
+    <schema id="311" parent="1" name="WROZPIOR">
+      <ObjectId>2191</ObjectId>
+    </schema>
+    <schema id="312" parent="1" name="WSCHONTH">
+      <ObjectId>2192</ObjectId>
+    </schema>
+    <schema id="313" parent="1" name="YMELNIK">
+      <ObjectId>2193</ObjectId>
+    </schema>
+    <schema id="314" parent="1" name="XTEMP01">
+      <ObjectId>2194</ObjectId>
+    </schema>
+    <schema id="315" parent="1" name="XTEMP02">
+      <ObjectId>2195</ObjectId>
+    </schema>
+    <schema id="316" parent="1" name="XTEMP03">
+      <ObjectId>2196</ObjectId>
+    </schema>
+    <schema id="317" parent="1" name="XTEMP04">
+      <ObjectId>2197</ObjectId>
+    </schema>
+    <schema id="318" parent="1" name="XTEMP05">
+      <ObjectId>2198</ObjectId>
+    </schema>
+    <schema id="319" parent="1" name="XTEMP06">
+      <ObjectId>2199</ObjectId>
+    </schema>
+    <schema id="320" parent="1" name="XTEMP07">
+      <ObjectId>2200</ObjectId>
+    </schema>
+    <schema id="321" parent="1" name="XTEMP08">
+      <ObjectId>2201</ObjectId>
+    </schema>
+    <schema id="322" parent="1" name="XTEMP09">
+      <ObjectId>2202</ObjectId>
+    </schema>
+    <schema id="323" parent="1" name="XTEMP10">
+      <ObjectId>2203</ObjectId>
+    </schema>
+    <schema id="324" parent="1" name="XTEMP11">
+      <ObjectId>2204</ObjectId>
+    </schema>
+    <schema id="325" parent="1" name="XTEMP12">
+      <ObjectId>2205</ObjectId>
+    </schema>
+    <schema id="326" parent="1" name="XTEMP13">
+      <ObjectId>2206</ObjectId>
+    </schema>
+    <schema id="327" parent="1" name="XTEMP14">
+      <ObjectId>2207</ObjectId>
+    </schema>
+    <schema id="328" parent="1" name="XTEMP15">
+      <ObjectId>2208</ObjectId>
+    </schema>
+    <schema id="329" parent="1" name="XTEMP16">
+      <ObjectId>2209</ObjectId>
+    </schema>
+    <schema id="330" parent="1" name="AMUSIAL1">
+      <ObjectId>2210</ObjectId>
+    </schema>
+    <schema id="331" parent="1" name="DJAGODZI">
+      <ObjectId>2211</ObjectId>
+    </schema>
+    <schema id="332" parent="1" name="RKZ">
+      <ObjectId>2212</ObjectId>
+    </schema>
+    <schema id="333" parent="1" name="MFAZIL">
+      <ObjectId>2213</ObjectId>
+    </schema>
+    <schema id="334" parent="1" name="STHANGAR">
+      <ObjectId>2214</ObjectId>
+    </schema>
+    <schema id="335" parent="1" name="BVINUKON">
+      <ObjectId>2215</ObjectId>
+    </schema>
+    <schema id="336" parent="1" name="POSTASZE">
+      <ObjectId>2216</ObjectId>
+    </schema>
+    <schema id="337" parent="1" name="MCHROSTO">
+      <ObjectId>2217</ObjectId>
+    </schema>
+    <schema id="338" parent="1" name="MWEIGLE">
+      <ObjectId>2218</ObjectId>
+    </schema>
+    <schema id="339" parent="1" name="PCZYZ2">
+      <ObjectId>2219</ObjectId>
+    </schema>
+    <schema id="340" parent="1" name="MLOTZ">
+      <ObjectId>2220</ObjectId>
+    </schema>
+    <schema id="341" parent="1" name="XLANTONI">
+      <ObjectId>2221</ObjectId>
+    </schema>
+    <schema id="342" parent="1" name="XWBASCIK">
+      <ObjectId>2222</ObjectId>
+    </schema>
+    <schema id="343" parent="1" name="XRBENEDY">
+      <ObjectId>2223</ObjectId>
+    </schema>
+    <schema id="344" parent="1" name="XABRANDT">
+      <ObjectId>2224</ObjectId>
+    </schema>
+    <schema id="345" parent="1" name="XPBZYMEK">
+      <ObjectId>2225</ObjectId>
+    </schema>
+    <schema id="346" parent="1" name="XACIEPLI">
+      <ObjectId>2226</ObjectId>
+    </schema>
+    <schema id="347" parent="1" name="XLCZAPIE">
+      <ObjectId>2227</ObjectId>
+    </schema>
+    <schema id="348" parent="1" name="XMLUDWIK">
+      <ObjectId>2228</ObjectId>
+    </schema>
+    <schema id="349" parent="1" name="XPMINORC">
+      <ObjectId>2229</ObjectId>
+    </schema>
+    <schema id="350" parent="1" name="XPMOTULE">
+      <ObjectId>2230</ObjectId>
+    </schema>
+    <schema id="351" parent="1" name="XGNOWAK">
+      <ObjectId>2231</ObjectId>
+    </schema>
+    <schema id="352" parent="1" name="XAPUZIA">
+      <ObjectId>2232</ObjectId>
+    </schema>
+    <schema id="353" parent="1" name="XPSAWICK">
+      <ObjectId>2233</ObjectId>
+    </schema>
+    <schema id="354" parent="1" name="XASIERAD">
+      <ObjectId>2234</ObjectId>
+    </schema>
+    <schema id="355" parent="1" name="XMSOSNOW">
+      <ObjectId>2235</ObjectId>
+    </schema>
+    <schema id="356" parent="1" name="XPWIETRZ">
+      <ObjectId>2236</ObjectId>
+    </schema>
+    <schema id="357" parent="1" name="XS$NULL">
+      <ObjectId>2147483638</ObjectId>
+    </schema>
+    <sequence id="358" parent="2" name="DEPARTMENTS_SEQUENCE">
+      <ObjectId>431328</ObjectId>
+      <CreatedTimestamp>2017-05-12.11:06:12</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.11:06:12</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="359" parent="2" name="EMPLOYEES_SEQUENCE">
+      <ObjectId>431329</ObjectId>
+      <CreatedTimestamp>2017-05-12.11:06:12</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.11:06:12</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <table id="360" parent="2" name="DEPARTMENTS">
+      <ObjectId>431334</ObjectId>
+      <CreatedTimestamp>2017-05-12.11:06:13</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.11:06:14</ModifiedTimestamp>
+    </table>
+    <table id="361" parent="2" name="EMPLOYEES">
+      <ObjectId>431330</ObjectId>
+      <CreatedTimestamp>2017-05-12.11:06:12</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.13:26:58</ModifiedTimestamp>
+    </table>
+    <table id="362" parent="2" name="INGREDIENTS">
+      <ObjectId>431332</ObjectId>
+      <CreatedTimestamp>2017-05-12.11:06:13</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.11:06:13</ModifiedTimestamp>
+    </table>
+    <table id="363" parent="2" name="RECIPES">
+      <ObjectId>431336</ObjectId>
+      <CreatedTimestamp>2017-05-12.11:06:13</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.11:06:13</ModifiedTimestamp>
+    </table>
+    <table id="364" parent="2" name="SHIFTS">
+      <ObjectId>431338</ObjectId>
+      <CreatedTimestamp>2017-05-12.11:06:14</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.12:49:48</ModifiedTimestamp>
+    </table>
+    <routine id="365" parent="2" name="DEPARTMENTS_GENERATOR">
+      <ObjectId>430868</ObjectId>
+      <RoutineKind>procedure</RoutineKind>
+      <CreatedTimestamp>2017-05-12.11:06:16</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.11:06:16</ModifiedTimestamp>
+    </routine>
+    <routine id="366" parent="2" name="EMPLOYEES_GENERATOR">
+      <ObjectId>430736</ObjectId>
+      <RoutineKind>procedure</RoutineKind>
+      <CreatedTimestamp>2017-05-12.11:06:15</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.11:06:15</ModifiedTimestamp>
+    </routine>
+    <routine id="367" parent="2" name="INGREDIENTS_GENERATOR">
+      <ObjectId>430838</ObjectId>
+      <RoutineKind>procedure</RoutineKind>
+      <CreatedTimestamp>2017-05-12.11:06:15</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.11:06:15</ModifiedTimestamp>
+    </routine>
+    <routine id="368" parent="2" name="RECIPES_GENERATOR">
+      <ObjectId>430845</ObjectId>
+      <RoutineKind>procedure</RoutineKind>
+      <CreatedTimestamp>2017-05-12.11:06:16</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.11:06:16</ModifiedTimestamp>
+    </routine>
+    <routine id="369" parent="2" name="SHIFTS_GENERATOR">
+      <ObjectId>430883</ObjectId>
+      <RoutineKind>procedure</RoutineKind>
+      <CreatedTimestamp>2017-05-12.11:06:16</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.11:06:16</ModifiedTimestamp>
+    </routine>
+    <column id="370" parent="360" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="371" parent="360" name="NAME">
+      <Position>2</Position>
+      <DataType>VARCHAR2(32)|0</DataType>
+    </column>
+    <column id="372" parent="360" name="MANAGER">
+      <Position>3</Position>
+      <DataType>NUMBER(*)|0</DataType>
+    </column>
+    <index id="373" parent="360" name="SYS_C00464618">
+      <ObjectId>431335</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-05-12.11:06:13</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.11:06:13</ModifiedTimestamp>
+      <TablespaceName>II_DATA</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="374" parent="360" name="SYS_C00464618">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-05-12.11:06:13</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00464618</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="375" parent="360" name="DEPARTMENTS_FK">
+      <ModifiedTimestamp>2017-05-12.11:06:13</ModifiedTimestamp>
+      <ColNames>MANAGER</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>EMPLOYEES</RefTableName>
+      <RefKeyName>SYS_C00464613</RefKeyName>
+    </foreign-key>
+    <trigger id="376" parent="360" name="DEPARTMENTS_AUTO_ID_TRIGGER">
+      <ObjectId>431326</ObjectId>
+      <CreatedTimestamp>2017-05-12.11:06:14</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.11:06:14</ModifiedTimestamp>
+      <Events>I</Events>
+      <Turn>before-row</Turn>
+    </trigger>
+    <column id="377" parent="361" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="378" parent="361" name="NAME">
+      <Position>2</Position>
+      <DataType>VARCHAR2(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="379" parent="361" name="SURNAME">
+      <Position>3</Position>
+      <DataType>VARCHAR2(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="380" parent="361" name="PHONE">
+      <Position>4</Position>
+      <DataType>VARCHAR2(16)|0</DataType>
+    </column>
+    <index id="381" parent="361" name="SYS_C00464613">
+      <ObjectId>431331</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-05-12.11:06:12</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.11:06:12</ModifiedTimestamp>
+      <TablespaceName>II_DATA</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="382" parent="361" name="EMPLOYEES_INDEX2">
+      <ObjectId>431540</ObjectId>
+      <CreatedTimestamp>2017-05-12.13:26:14</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.13:26:14</ModifiedTimestamp>
+      <TablespaceName>II_DATA</TablespaceName>
+      <ColNames>ID
+NAME
+SURNAME</ColNames>
+    </index>
+    <index id="383" parent="361" name="EMPLOYEES_INDEX3">
+      <ObjectId>431541</ObjectId>
+      <CreatedTimestamp>2017-05-12.13:26:58</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.13:26:58</ModifiedTimestamp>
+      <TablespaceName>II_DATA</TablespaceName>
+      <ColNames>ID
+NAME
+PHONE</ColNames>
+    </index>
+    <index id="384" parent="361" name="EMPLOYEES_INDEX">
+      <ObjectId>431520</ObjectId>
+      <CreatedTimestamp>2017-05-12.13:13:41</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.13:26:08</ModifiedTimestamp>
+      <TablespaceName>II_DATA</TablespaceName>
+      <ColNames>NAME</ColNames>
+    </index>
+    <key id="385" parent="361" name="SYS_C00464613">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-05-12.11:06:12</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00464613</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <trigger id="386" parent="361" name="EMPLOYEES_AUTO_ID_TRIGGER">
+      <ObjectId>431325</ObjectId>
+      <CreatedTimestamp>2017-05-12.11:06:14</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.11:06:14</ModifiedTimestamp>
+      <Events>I</Events>
+      <Turn>before-row</Turn>
+    </trigger>
+    <column id="387" parent="362" name="NAME">
+      <Position>1</Position>
+      <DataType>VARCHAR2(256)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="388" parent="362" name="PRICE_PER_UNIT">
+      <Position>2</Position>
+      <DataType>NUMBER(6,2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="389" parent="362" name="SYS_C00464616">
+      <ObjectId>431333</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-05-12.11:06:13</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.11:06:13</ModifiedTimestamp>
+      <TablespaceName>II_DATA</TablespaceName>
+      <ColNames>NAME</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="390" parent="362" name="SYS_C00464616">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-05-12.11:06:13</ModifiedTimestamp>
+      <ColNames>NAME</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00464616</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="391" parent="363" name="NAME">
+      <Position>1</Position>
+      <DataType>VARCHAR2(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="392" parent="363" name="SYS_C00464621">
+      <ObjectId>431337</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-05-12.11:06:13</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.11:06:13</ModifiedTimestamp>
+      <TablespaceName>II_DATA</TablespaceName>
+      <ColNames>NAME</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="393" parent="363" name="SYS_C00464621">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-05-12.11:06:13</ModifiedTimestamp>
+      <ColNames>NAME</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00464621</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="394" parent="364" name="DATE_OF_SHIFT">
+      <Position>1</Position>
+      <DataType>DATE|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="395" parent="364" name="DEPARTMENT">
+      <Position>2</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="396" parent="364" name="COST">
+      <Position>3</Position>
+      <DataType>NUMBER(6,2)|0</DataType>
+    </column>
+    <index id="397" parent="364" name="SHIFTS_PK">
+      <ObjectId>431339</ObjectId>
+      <CreatedTimestamp>2017-05-12.11:06:14</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.11:06:14</ModifiedTimestamp>
+      <TablespaceName>II_DATA</TablespaceName>
+      <ColNames>DATE_OF_SHIFT
+DEPARTMENT</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="398" parent="364" name="SHIFTS_INDEX2">
+      <ObjectId>431476</ObjectId>
+      <CreatedTimestamp>2017-05-12.12:49:44</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.12:49:48</ModifiedTimestamp>
+      <TablespaceName>II_DATA</TablespaceName>
+      <ColNames>DEPARTMENT
+DATE_OF_SHIFT</ColNames>
+    </index>
+    <index id="399" parent="364" name="SHIFTS_INDEX">
+      <ObjectId>431432</ObjectId>
+      <CreatedTimestamp>2017-05-12.12:39:29</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.12:46:08</ModifiedTimestamp>
+      <TablespaceName>II_DATA</TablespaceName>
+      <ColNames>DEPARTMENT</ColNames>
+    </index>
+    <key id="400" parent="364" name="SHIFTS_PK">
+      <ModifiedTimestamp>2017-05-12.11:06:14</ModifiedTimestamp>
+      <ColNames>DATE_OF_SHIFT
+DEPARTMENT</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SHIFTS_PK</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="401" parent="364" name="SHIFTS_FK">
+      <ModifiedTimestamp>2017-05-12.11:06:14</ModifiedTimestamp>
+      <ColNames>DEPARTMENT</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>DEPARTMENTS</RefTableName>
+      <RefKeyName>SYS_C00464618</RefKeyName>
+    </foreign-key>
+    <trigger id="402" parent="364" name="SHIFTS_DATE_TRUNCATE_TRIGGER">
+      <ObjectId>431327</ObjectId>
+      <CreatedTimestamp>2017-05-12.11:06:15</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.11:06:15</ModifiedTimestamp>
+      <Events>IU</Events>
+      <Turn>before-row</Turn>
+    </trigger>
+  </database-model>
+</dataSource>
