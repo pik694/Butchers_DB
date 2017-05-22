@@ -1,3 +1,4 @@
+
 alter session set current_schema = pzelazko;
 
 /* ERASING DB */
@@ -5,21 +6,37 @@ alter session set current_schema = pzelazko;
 drop sequence employees_sequence;
 drop sequence departments_sequence;
 
+drop package global_variables;
+
 
 alter table shifts drop constraint shifts_fk;
+
 alter table departments drop constraint departments_fk;
+
+alter table production drop constraint recipe_fk;
+alter table production drop constraint shift_fk;
+
+alter table workers_on_shifts drop constraint employee_fk;
+alter table workers_on_shifts drop constraint workers_shift_fk;
 
 drop table employees;
 drop table ingredients;
 drop table recipes;
 drop table departments;
 drop table shifts;
+drop table ingredients_in_recipes;
+drop table production;
+drop table workers_on_shifts;
 
 drop procedure employees_generator;
 drop procedure ingredients_generator;
 drop procedure recipes_generator;
 drop procedure departments_generator;
 drop procedure shifts_generator;
+drop procedure workers_on_shifts_generator;
+drop procedure production_generator;
+drop procedure recipes_ingredients_generator
+
 
 /* SEQUENCES */
 
@@ -56,7 +73,7 @@ create table DEPARTMENTS
 	NAME VARCHAR2(32),
 	MANAGER NUMBER
 		constraint DEPARTMENTS_FK
-			references EMPLOYEES
+			references EMPLOYEES on delete set null
 );
 
 
@@ -78,13 +95,46 @@ create table SHIFTS
 );
 
 
+create table ingredients_in_recipes (
+  recipe varchar2(32) not null
+    constraint recipes_fk references recipes on delete cascade,
+  ingredient varchar2(32) not null
+    constraint ingredients_fk references ingredients on delete cascade,
+  amount number(6,2)
+);
+alter table ingredients_in_recipes add constraint ingredient_unique unique (recipe, ingredient);
+
+create table production (
+  shift_date date not null,
+  department number not null,
+  recipe varchar2(32) not null
+    constraint recipe_fk references recipes,
+  amount number(6,2) not null
+);
+alter table production add constraint shift_fk foreign key (shift_date, department) references shifts(date_of_shift, department);
+alter table production add constraint recipe_unique unique (shift_date, department, recipe);
+
+create table workers_on_shifts (
+  employee number not null
+    constraint  employee_fk references employees,
+  shift_date date not null,
+  department number not null
+);
+alter table workers_on_shifts add constraint workers_shift_fk foreign key (shift_date, department) references shifts(date_of_shift, department);
+alter table workers_on_shifts add constraint workers_shifts_unique unique (shift_date, employee);
+
 /* END TABLES */
 
+/* PROCEDURES */
+
+
+
+/* END PROCEDURES */
 
 /* TRIGGERS */
 
 -- EMPLOYEES' TRIGGERS
-create trigger EMPLOYEES_AUTO_ID_TRIGGER
+create or replace trigger EMPLOYEES_AUTO_ID_TRIGGER
 	before insert
 	on EMPLOYEES
 	for each row
@@ -94,25 +144,41 @@ create trigger EMPLOYEES_AUTO_ID_TRIGGER
 /
 
 -- INGREDIENTS' TRIGGERS
+create or replace trigger ingredient_validation_trigger
+  before insert or update
+  on ingredients
+  for each row
+begin
+    if :new.price_per_unit <= 0 then
+      RAISE_APPLICATION_ERROR(-20000, 'Price cannot equal or be below 0');
+    end if;
+end;
+/
+
+create or replace trigger ingredient_price_changed
+  after update of price_per_unit
+  on ingredients
+  for each row
+begin
+  dbms_output.put_line('Price of '|| :new.name  || ' has changed from ' || to_char(:old.price_per_unit) || ' to ' || to_char(:new.price_per_unit));
+end;
+/
 
 
 -- DEPARTMENTS' TRIGGERS
-create trigger DEPARTMENTS_AUTO_ID_TRIGGER
+create or replace trigger DEPARTMENTS_AUTO_ID_TRIGGER
 	before insert
 	on DEPARTMENTS
 	for each row
 begin
     :new.id := departments_sequence.nextval;
-  end;
+end;
 /
 
 -- RECIPES' TRIGGERS
 
-
-
 -- SHIFTS' TRIGGERS
-
-create trigger SHIFTS_DATE_TRUNCATE_TRIGGER
+create or replace trigger SHIFTS_DATE_TRUNCATE_TRIGGER
 	before insert or update
 	on SHIFTS
 	for each row
@@ -121,6 +187,61 @@ begin
   end;
 /
 
+
+-- INGREDIENTS IN RECIPES TRIGGERS
+create or replace trigger recipes_trigger
+  before insert or update
+  on ingredients_in_recipes
+  for each row
+  begin
+    if :new.amount <= 0 then
+      RAISE_APPLICATION_ERROR(-20000, 'Amount cannot equal or be below 0');
+    end if;
+  end;
+/
+
+-- PRODUCTION TRIGGERS
+
+create or replace trigger production_trigger
+  before insert or update or delete
+  on production
+  for each row
+  declare
+    cost number(6,2);
+begin
+  if :new.amount <= 0 then
+      RAISE_APPLICATION_ERROR(-20000, 'Amount cannot equal or be below 0');
+  end if;
+  select ingredients.price_per_unit * :new.amount into cost from ingredients where ingredients.name =
+  case
+    when inserting then
+
+    when updating then
+    when deleting then
+    --TODO:
+  end case;
+end;
+
+-- WORKERS ON SHIFTS TRIGGERS
+create or replace trigger workers_shifts_trigger
+  after insert or update or delete
+  on workers_on_shifts
+  for each row
+  declare
+    wage number(6,2);
+  begin
+    wage := 150;
+    case
+      when inserting then
+        update shifts set cost = nvl(cost,0) + wage where department = :new.department and date_of_shift = :new.shift_date;
+      when updating then
+        update shifts set cost = nvl(cost,0) + wage where department = :new.department and date_of_shift = :new.shift_date;
+        update shifts set cost = nvl(cost,0) - wage where department = :old.department and date_of_shift = :old.shift_date;
+      when deleting then
+        update shifts set cost = nvl(cost,0) - wage where department = :old.department and date_of_shift = :old.shift_date;
+    end case;
+  end;
+/
 
 /* END TRIGGERS */
 
@@ -204,7 +325,29 @@ CREATE or replace procedure shifts_generator as
   end;
 /
 
+create or replace procedure workers_on_shifts_generator as
+  begin
+    for i in 1..100 loop
+        --TODO
+    end loop;
+  end;
+/
 
+create or replace procedure production_generator as
+  begin
+    for i in 1..5000 loop
+      --TODO
+    end loop;
+  end;
+/
+
+create or replace procedure recipes_ingredients_generator as
+  begin
+    for i in 1...500 loop
+      --TODO
+    end loop;
+  end;
+/
 /* END GENERATORS */
 
 
@@ -216,21 +359,25 @@ begin
   ingredients_generator();
   recipes_generator();
   shifts_generator();
+  workers_on_shifts_generator();
+  recipes_ingredients_generator();
+  production_generator();
 end;
 
 commit;
 
 /* CHECK RESULTS */
 
-
+/*
 select * from employees;
 select d.id, d.name, e.name, e.surname from departments d join employees e on d.manager = e.id;
 select * from ingredients;
 select * from recipes;
-select date_of_shift, departments.name from shifts join departments on shifts.department = departments.id;
+select date_of_shift, departments.name as department from shifts join departments on shifts.department = departments.id;
 
 select departments.name as dep_name, count (shifts.date_of_shift) as count
 from shifts
   join departments on shifts.department = departments.id
 group by departments.name
 order by departments.name asc;
+*/
