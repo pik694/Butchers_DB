@@ -6,9 +6,6 @@ alter session set current_schema = pzelazko;
 drop sequence employees_sequence;
 drop sequence departments_sequence;
 
-drop package global_variables;
-
-
 alter table shifts drop constraint shifts_fk;
 
 alter table departments drop constraint departments_fk;
@@ -18,6 +15,9 @@ alter table production drop constraint shift_fk;
 
 alter table workers_on_shifts drop constraint employee_fk;
 alter table workers_on_shifts drop constraint workers_shift_fk;
+
+alter table ingredients_in_recipes drop constraint recipes_fk;
+alter table ingredients_in_recipes drop constraint ingredients_fk;
 
 drop table employees;
 drop table ingredients;
@@ -35,7 +35,7 @@ drop procedure departments_generator;
 drop procedure shifts_generator;
 drop procedure workers_on_shifts_generator;
 drop procedure production_generator;
-drop procedure recipes_ingredients_generator
+drop procedure recipes_ingredients_generator;
 
 
 /* SEQUENCES */
@@ -89,7 +89,7 @@ create table SHIFTS
 	DEPARTMENT NUMBER not null
 		constraint SHIFTS_FK
 			references DEPARTMENTS,
-	COST NUMBER(6,2),
+	COST NUMBER(8,2),
 	constraint SHIFTS_PK
 		primary key (DATE_OF_SHIFT, DEPARTMENT)
 );
@@ -207,18 +207,30 @@ create or replace trigger production_trigger
   on production
   for each row
   declare
-    cost number(6,2);
+  cost_per_kilo number(6,2);
 begin
   if :new.amount <= 0 then
       RAISE_APPLICATION_ERROR(-20000, 'Amount cannot equal or be below 0');
   end if;
-  select ingredients.price_per_unit * :new.amount into cost from ingredients where ingredients.name =
   case
     when inserting then
 
+      select sum(amount * price_per_unit) / sum(amount) into cost_per_kilo
+        from ingredients_in_recipes join ingredients on ingredients_in_recipes.ingredient = ingredients.name where recipe = :new.recipe group by recipe;
+      update shifts set cost = nvl(cost,0) + (cost_per_kilo * :new.amount) where date_of_shift = :new.shift_date and department = :new.department;
+
     when updating then
+      select sum(amount * price_per_unit) / sum(amount) into cost_per_kilo
+        from ingredients_in_recipes join ingredients on ingredients_in_recipes.ingredient = ingredients.name where recipe = :old.recipe group by recipe;
+      update shifts set cost = nvl(cost,0) - (cost_per_kilo * :old.amount) where date_of_shift = :old.shift_date and department = :old.department;
+
+      select sum(amount * price_per_unit) / sum(amount) into cost_per_kilo
+        from ingredients_in_recipes join ingredients on ingredients_in_recipes.ingredient = ingredients.name where recipe = :new.recipe group by recipe;
+      update shifts set cost = nvl(cost,0) + (cost_per_kilo * :new.amount) where date_of_shift = :new.shift_date and department = :new.department;
     when deleting then
-    --TODO:
+      select sum(amount * price_per_unit) / sum(amount) into cost_per_kilo
+        from ingredients_in_recipes join ingredients on ingredients_in_recipes.ingredient = ingredients.name where recipe = :old.recipe group by recipe;
+      update shifts set cost = nvl(cost,0) - (cost_per_kilo * :old.amount) where date_of_shift = :old.shift_date and department = :old.department;
   end case;
 end;
 
@@ -230,7 +242,7 @@ create or replace trigger workers_shifts_trigger
   declare
     wage number(6,2);
   begin
-    wage := 150;
+    wage := 10;
     case
       when inserting then
         update shifts set cost = nvl(cost,0) + wage where department = :new.department and date_of_shift = :new.shift_date;
@@ -259,7 +271,7 @@ CREATE or replace procedure employees_generator as
     names := str_table ('Adam', 'Adrian', 'Krzysztof', 'Daniel', 'Zdzislaw', 'Mariusz', 'Piotr', 'Paweł', 'Zbigniew', 'Władysław', 'Jan', 'Robert', 'Grzegorz', 'Fabian', 'Michał', 'Włodzimierz', 'Waldemar', 'Janusz', 'Edward', 'Mateusz');
     surnames := str_table ('Nowak', 'Kowalski', 'Wiśniewski', 'Wójcik', 'Kowalczyk', 'Woźniak', 'Lewandowski', 'Kamiński', 'Zieliński', 'Szymański', 'Dąbrowski', 'Jankowski', 'Kozłowski', 'Mazur', 'Wojciechowski', 'Krawczyk', 'Kwiatkowski');
 
-    for i in 1..1000 loop
+    for i in 1..50 loop
       random_name := dbms_random.value(1, names.count);
       random_surname := dbms_random.value(1, surnames.count);
       random_phone_number := dbms_random.value(500000000, 899999999);
@@ -276,7 +288,7 @@ CREATE or replace procedure ingredients_generator as
   begin
     for i in 1..128 loop
       name := dbms_random.string('u', 16);
-      price := dbms_random.value (0, 999999) / 100;
+      price := dbms_random.value (1, 9999) / 100;
       insert into ingredients (name, price_per_unit) values (name, price);
     end loop;
     dbms_output.put_line('Added 32 ingredients');
@@ -319,35 +331,65 @@ CREATE or replace procedure shifts_generator as
   begin
     for i in 1..100 loop
       insert into shifts (date_of_shift, department) values (
-             (select to_date('1999-01-01','yyyy-mm-dd') + trunc(dbms_random.value(1,10000)) from dual),
+             to_date('2017-01-01','yyyy-mm-dd') + i,
              (select * from (select id from departments order by dbms_random.value) where rownum = 1));
     end loop;
   end;
 /
 
+
 create or replace procedure workers_on_shifts_generator as
+  shifts_nr integer;
+  employees_nr integer;
+  shift_d date;
+  shift_dep integer;
   begin
-    for i in 1..100 loop
-        --TODO
+    select count(*) into employees_nr from employees;
+    for i in 1..employees_nr loop
+        shifts_nr := dbms_random.value(1, 100);
+        for q in 1..shifts_nr loop
+          insert into workers_on_shifts values (i,
+                          (select date_of_shift from (select row_number() over (order by date_of_shift, department) as row_num, date_of_shift, department from shifts order by 1,2) where row_num = q),
+                          (select department from (select row_number() over (order by date_of_shift, department) as row_num, date_of_shift, department from shifts order by 1,2) where row_num = q)
+          );
+
+        end loop;
     end loop;
   end;
 /
 
+
 create or replace procedure production_generator as
   begin
-    for i in 1..5000 loop
-      --TODO
+    for q in 1..100 loop
+      for i in 1..50 loop
+        insert into production values (
+            (select date_of_shift from (select row_number() over (order by date_of_shift, department) as row_num, date_of_shift, department from shifts order by 1,2) where row_num = q),
+            (select department from (select row_number() over (order by date_of_shift, department) as row_num, date_of_shift, department from shifts order by 1,2) where row_num = q),
+            (select name from (select row_number() over (order by name) as row_num, name from recipes) where row_num = i),
+            dbms_random.value(1,999) / 100
+        );
+      end loop;
     end loop;
   end;
 /
 
 create or replace procedure recipes_ingredients_generator as
+  amount_ number (6,2);
   begin
-    for i in 1...500 loop
-      --TODO
+    for i in 1..128 loop
+      for q in 1..10 loop
+        amount_ := dbms_random.value(1,999) / 100;
+        insert into ingredients_in_recipes (recipe, ingredient, amount) values (
+          (select name from (select row_number() over (order by name) as row_num, name from recipes) where row_num = i),
+          (select name from (select row_number() over (order by name) as row_num, name from ingredients) where row_num = q),
+          amount_
+        );
+      end loop;
     end loop;
   end;
 /
+
 /* END GENERATORS */
 
 
@@ -355,29 +397,129 @@ create or replace procedure recipes_ingredients_generator as
 
 begin
   employees_generator();
+end;
+
+begin
   departments_generator();
+end;
+
+begin
   ingredients_generator();
+end;
+
+begin
   recipes_generator();
+end;
+
+begin
   shifts_generator();
+end;
+
+begin
   workers_on_shifts_generator();
+end;
+
+begin
   recipes_ingredients_generator();
+end;
+
+begin
   production_generator();
 end;
 
+
 commit;
 
-/* CHECK RESULTS */
+/* INSERTS */
 
-/*
+insert into employees (name, surname) values ('Adam', 'Nowak');
+insert into employees (name, surname) values ('Jan', 'Kowalski');
+
+insert into departments (NAME, MANAGER) values ('A', 1);
+insert into shifts (DATE_OF_SHIFT, DEPARTMENT) values (to_date('12.11.2011', 'dd.mm.yyyy') ,1);
+insert into shifts (DATE_OF_SHIFT, DEPARTMENT) values (to_date('11.11.2011', 'dd.mm.yyyy') ,1);
+insert into shifts (DATE_OF_SHIFT, DEPARTMENT) values (to_date('10.11.2011', 'dd.mm.yyyy') ,1);
+
+insert into workers_on_shifts (EMPLOYEE, SHIFT_DATE, DEPARTMENT) values (1, to_date('10.11.2011', 'dd.mm.yyyy') ,1);
+insert into workers_on_shifts (EMPLOYEE, SHIFT_DATE, DEPARTMENT) values (2, to_date('10.11.2011', 'dd.mm.yyyy') ,1);
+insert into workers_on_shifts (EMPLOYEE, SHIFT_DATE, DEPARTMENT) values (1, to_date('11.11.2011', 'dd.mm.yyyy') ,1);
+
+
+insert into ingredients values ('kasza', 0.5);
+insert into ingredients values ('krew', 10.5);
+insert into ingredients values ('wątroba', 23);
+
+insert into ingredients values ('wyciąg z dymu', 100);
+insert into ingredients values ('prażona cebula', 20);
+
+insert into ingredients values ('szynka wieprzowa', 15);
+
+
+insert into recipes values ('szynka dymiona');
+insert into recipes values ('kaszanka');
+
+insert into ingredients_in_recipes (RECIPE, INGREDIENT, AMOUNT) values ('kaszanka', 'kasza', 10);
+insert into ingredients_in_recipes (RECIPE, INGREDIENT, AMOUNT) values ('kaszanka', 'krew', 2);
+insert into ingredients_in_recipes (RECIPE, INGREDIENT, AMOUNT) values ('kaszanka', 'wątroba', 2);
+
+insert into ingredients_in_recipes (RECIPE, INGREDIENT, AMOUNT) values ('szynka dymiona', 'szynka wieprzowa', 1);
+insert into ingredients_in_recipes (RECIPE, INGREDIENT, AMOUNT) values ('szynka dymiona', 'wyciąg z dymu', 0.01);
+
+
+insert into production values (to_date('10.11.2011', 'dd.mm.yyyy'),1, 'kaszanka', 250.6);
+insert into production values (to_date('11.11.2011', 'dd.mm.yyyy'),1, 'kaszanka', 250.4);
+insert into production values (to_date('12.11.2011', 'dd.mm.yyyy'),1, 'kaszanka', 250.04);
+
+commit;
+
+/* SELECTS */
+
+select recipes.name as produkt, ingredients.name as skladnik, ingredients_in_recipes.amount as ilosc,  ingredients.price_per_unit as cena_za_kg
+  from ingredients_in_recipes join recipes on ingredients_in_recipes.recipe = recipes.name join ingredients on ingredients_in_recipes.ingredient = ingredients.name
+  order by 1 asc , 3 desc;
+
+select recipe as produkt, sum(amount) as ilosc, sum(amount * price_per_unit) as koszt
+  from ingredients_in_recipes join ingredients on ingredient = name
+  group by recipe;
+
+select departments.name as zaklad, employees.name as imie_kierownika, employees.surname as nazwisko_kierownika
+  from departments join employees on departments.manager = employees.id;
+
+select departments.name as zaklad, count (shifts.date_of_shift) as liczba_odbytych_zmian
+  from shifts join departments on shifts.department = departments.id
+  group by departments.name
+  order by departments.name asc;
+
 select * from employees;
 select d.id, d.name, e.name, e.surname from departments d join employees e on d.manager = e.id;
 select * from ingredients;
 select * from recipes;
-select date_of_shift, departments.name as department from shifts join departments on shifts.department = departments.id;
 
-select departments.name as dep_name, count (shifts.date_of_shift) as count
-from shifts
-  join departments on shifts.department = departments.id
-group by departments.name
-order by departments.name asc;
-*/
+
+select * from employees e;
+
+-- regular employees
+select name, surname from employees
+  where id not in (select manager from departments);
+
+-- managers
+select e.name, e.surname from departments d join employees e on d.manager = e.id;
+
+
+select  name as imie, surname as nazwisko, cnt as liczba_zmian
+from employees join (select employee, count (shift_date) as cnt from workers_on_shifts group by employee) on employee = id;
+
+select recipe, sum (amount) from production group by recipe having count (*) > 50;
+
+select recipe, sum (amount) from production group by recipe having min(shift_date) > to_date('01.04.2017', 'dd.mm.yyyy');
+select recipe, sum (amount) from production where shift_date > to_date('01.04.2017', 'dd.mm.yyyy') group by recipe;
+
+/* END SELECTS */
+
+
+/* HINTS */
+
+
+/* END HINTS */
+
+commit ;
