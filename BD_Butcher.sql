@@ -516,10 +516,109 @@ select recipe, sum (amount) from production where shift_date > to_date('01.04.20
 
 /* END SELECTS */
 
+/* INDEXES */
 
+
+begin
+  DBMS_STATS.GATHER_TABLE_STATS ('pzelazko','employees');
+end;
+
+create index employees_idx on employees(name, surname);
+explain plan for
+select surname, count (*) from employees where name = 'Adrian' group by surname;
+select *
+from table (dbms_xplan.display);
+
+
+
+begin
+  DBMS_STATS.GATHER_TABLE_STATS ('pzelazko','production');
+end;
+
+create index production_amount_idx on production(amount);
+
+
+explain plan for
+select * from production where amount =  1.0;
+select *
+from table (dbms_xplan.display);
+
+
+
+/* END INDEXES */
 /* HINTS */
 
+-- NESTED LOOP
+explain plan for
+select  production.*, ingredient
+  from production join ingredients_in_recipes on production.recipe=ingredients_in_recipes.recipe
+  where ingredient = 'krew' and production.amount = 1.1;
+select *
+from table (dbms_xplan.display);
+
+explain plan for
+select /*+ use_merge(production, ingredients_in_recipes) */ production.*, ingredient
+  from production join ingredients_in_recipes on production.recipe=ingredients_in_recipes.recipe
+  where ingredient = 'krew' and production.amount = 1.1;
+select *
+from table (dbms_xplan.display);
+
+explain plan for
+select /*+ use_hash(production, ingredients_in_recipes) */ production.*, ingredient
+  from production join ingredients_in_recipes on production.recipe=ingredients_in_recipes.recipe
+  where ingredient = 'krew' and production.amount = 1.1;
+select *
+from table (dbms_xplan.display);
+
+-- HASH JOIN
+
+
+explain plan for
+select production.*, shifts.* from production join shifts on production.department = shifts.department and production.shift_date = shifts.date_of_shift;
+select *
+from table (dbms_xplan.display);
+
+
+explain plan for
+select /*+ use_merge(production, shifts) */ production.*, shifts.* from production join shifts on production.department = shifts.department and production.shift_date = shifts.date_of_shift;
+select *
+from table (dbms_xplan.display);
+
+explain plan for
+select /*+  use_nl(production, shifts)*/production.*, shifts.* from production join shifts on production.department = shifts.department and production.shift_date = shifts.date_of_shift;
+select *
+from table (dbms_xplan.display);
+
+
+-- MERGE
+
+create index merge_idx on production(recipe);
+
+explain plan for
+select  production.*, ingredient
+  from production join ingredients_in_recipes on production.recipe=ingredients_in_recipes.recipe
+  where production.recipe='kaszanka' and production.amount = 1.1;
+select *
+from table (dbms_xplan.display);
+
+
+explain plan for
+select /*+ use_nl(production, ingredients_in_recipes) */ production.*, ingredient
+  from production join ingredients_in_recipes on production.recipe=ingredients_in_recipes.recipe
+  where production.recipe='kaszanka' and production.amount = 1.1;
+select *
+from table (dbms_xplan.display);
+
+
+explain plan for
+select /*+ use_hash(production, ingredients_in_recipes) */ production.*, ingredient
+  from production join ingredients_in_recipes on production.recipe=ingredients_in_recipes.recipe
+  where production.recipe='kaszanka' and production.amount = 1.1;
+select *
+from table (dbms_xplan.display);
 
 /* END HINTS */
 
 commit ;
+
+
